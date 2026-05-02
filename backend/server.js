@@ -29,9 +29,9 @@ app.use("/task", taskRoutes);
 console.log("Auth Routes loaded")
 
 // test route
-// app.get("/", (req, res) => {
-//   res.send("API Running");
-// });
+app.get("/", (req, res) => {
+  res.send("API Running");
+});
 
 app.get("/", (req,res) => {
   res.render("login");
