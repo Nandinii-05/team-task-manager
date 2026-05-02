@@ -1,12 +1,8 @@
-const path = require("path");
 
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
-
-const cookieParser = require("cookie-parser");
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
+const cookieParser = require("cookie-parser");
 const authRoutes = require("./routes/authRoutes");
 const projectRoutes = require("./routes/projectRoutes");
 const taskRoutes = require("./routes/taskRoutes");
@@ -15,6 +11,11 @@ const axios = require("axios");
 const {login} = require("./controllers/authController");
 
 const app = express();
+
+const path = require("path");
+
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({extended: true}));
