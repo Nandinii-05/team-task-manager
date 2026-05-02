@@ -1,0 +1,20 @@
+<h1>Dashboard</h1>
+
+<a href="/create-task">Create Task</a>
+
+<hr>
+
+<h2>Tasks</h2>
+
+<% if (tasks.length === 0) { %>
+  <p>No tasks yet</p>
+<% } %>
+
+<% tasks.forEach(task => { %>
+  <div style="border:1px solid black; padding:10px; margin:10px;">
+    <h3><%= task.title %></h3>
+    <p><%= task.description %></p>
+    <p>Status: <%= task.status %></p>
+    <p>Deadline: <%= new Date(task.deadline).toDateString() %></p>
+  </div>
+<% }) %>
